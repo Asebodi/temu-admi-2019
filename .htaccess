@@ -1,0 +1,18 @@
+RewriteEngine on
+
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteCond %{HTTP_REFERER} !^http://officialtemuadmi.org/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://officialtemuadmi.org$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.officialtemuadmi.org/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.officialtemuadmi.org$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://officialtemuadmi.org/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://officialtemuadmi.org$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.officialtemuadmi.org/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.officialtemuadmi.org$      [NC]
+RewriteRule .*\.(jpg|jpeg|gif|png|bmp)$ - [F,NC]
+RewriteCond %{HTTP_HOST} ^officialtemuadmi\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.officialtemuadmi\.org$
+RewriteRule ^index1\.html$ "https\:\/\/officialtemuadmi\.org\/" [R=301,L]
+
